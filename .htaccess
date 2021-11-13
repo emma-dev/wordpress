@@ -1,0 +1,16 @@
+
+# BEGIN WordPress
+# Direktivy (stroki) mezhdu `BEGIN WordPress` i `END WordPress`
+# sozdany avtomaticheski i podlezhat izmeneniju tolko cherez filtry WordPress.
+# Sdelannye vruchnuju izmenenija mezhdu etimi markerami budut perezapisany.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /childhood/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /childhood/index.php [L]
+</IfModule>
+
+# END WordPress
